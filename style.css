@@ -1,0 +1,297 @@
+:root {
+    --color-pink: #ffe6ea;
+    --color-white: #ffffff;
+    --color-black: #2b2b2b;
+    --color-text-pink: #ff4d6d;
+    --color-heart: #ff4d6d;
+    --color-bg-letter: #fffdf5;
+    --color-border: #ffccd5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, var(--color-pink), #f7d6e0);
+    color: var(--color-black);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Stage 1: Entrance Gift Box */
+#gift-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    cursor: pointer;
+}
+
+.gift-box {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 1.5s infinite alternate;
+}
+
+.gift-title {
+    font-weight: 600;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: var(--color-text-pink);
+}
+
+.gift-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+/* Stage 2: Main Site */
+#main-site {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #666;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    background: var(--color-text-pink);
+    color: var(--color-white);
+}
+
+.page {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page 1: Birthday Container & Tree Canvas */
+.birthday-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.birthday-title {
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-text-pink);
+    margin-bottom: 10px;
+}
+
+.birthday-subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    max-width: 550px;
+    margin: 0 auto 15px auto;
+    line-height: 1.5;
+}
+
+.flower-canvas-wrapper {
+    width: 100%;
+    max-width: 400px;
+    height: 320px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: radial-gradient(circle, #fffafb 0%, #fff0f3 100%);
+    box-shadow: inset 0 0 15px rgba(255, 182, 193, 0.3);
+}
+
+#heartTreeCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Page 2: Photo Cards */
+.page-heading {
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    color: var(--color-text-pink);
+    margin-bottom: 20px;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.polaroid-card {
+    background: #ffffff;
+    padding: 12px 12px 18px 12px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.polaroid-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.polaroid-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-caption {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like-btn {
+    background: #fff0f3;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-pink);
+    padding: 4px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Page 3: Postcard */
+.postcard-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.postcard {
+    background: #fffdf7;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 20px;
+    position: relative;
+    border: 1px solid #f0e6d2;
+}
+
+.close-card {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.postcard-left {
+    flex: 1;
+    background: #ffd6e0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    overflow: hidden;
+}
+
+.postcard-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.postcard-right {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.postcard-header {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--color-text-pink);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.postcard-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: #444;
+}
+
+.sticker-icon {
+    font-size: 32px;
+    align-self: flex-end;
+}
+
+/* Cursor Trail */
+.heart-trail {
+    position: absolute;
+    pointer-events: none;
+    font-size: 14px;
+    animation: fadeOut 1s forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: translateY(-20px) scale(0.5); }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mochiy+Pop+One&family=Fredoka:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Stage 1: Entrance Gift Box -->
+    <div id="gift-stage">
+        <div class="gift-box">🎁</div>
+        <h2 class="gift-title">A special surprise for you...</h2>
+        <p class="gift-subtitle">Tap the box to open</p>
+    </div>
+
+    <!-- Stage 2: Main Site -->
+    <div id="main-site">
+        
+        <!-- Navigation Bar -->
+        <nav>
+            <button class="nav-btn active" onclick="switchPage('page1', this)">Birthday Wish</button>
+            <button class="nav-btn" onclick="switchPage('page2', this)">Memories</button>
+            <button class="nav-btn" onclick="switchPage('page3', this)">Final Card</button>
+        </nav>
+
+        <!-- PAGE 1: Interactive Heart Tree -->
+        <div id="page1" class="page active">
+            <div class="birthday-container">
+                <h1 class="birthday-title">Happy Birthday! 🎉✨</h1>
+                <p class="birthday-subtitle">
+                    Wishing you a year filled with endless joy, growth, and wonderful moments.
+                </p>
+
+                <!-- Interactive Canvas Container -->
+                <div class="flower-canvas-wrapper">
+                    <canvas id="heartTreeCanvas" width="400" height="320"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Photos Gallery -->
+        <div id="page2" class="page">
+            <h2 class="page-heading">Captured Moments 📸</h2>
+            <div class="photo-grid">
+                <div class="polaroid-card">
+                    <img src="images/photo1.png" alt="Memory 1">
+                    <div class="card-caption">
+                        <span class="caption-text">Where it all started</span>
+                        <button class="like-btn" onclick="likeCard(this)">❤️ <span class="count">0</span></button>
+                    </div>
+                </div>
+
+                <div class="polaroid-card">
+                    <img src="images/photo2.png" alt="Memory 2">
+                    <div class="card-caption">
+                        <span class="caption-text">Best days together</span>
+                        <button class="like-btn" onclick="likeCard(this)">❤️ <span class="count">0</span></button>
+                    </div>
+                </div>
+
+                <div class="polaroid-card">
+                    <img src="images/photo3.png" alt="Memory 3">
+                    <div class="card-caption">
+                        <span class="caption-text">Unforgettable smile</span>
+                        <button class="like-btn" onclick="likeCard(this)">❤️ <span class="count">0</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: Postcard Pop-up Letter -->
+        <div id="page3" class="page">
+            <div class="postcard-wrapper">
+                <div class="postcard">
+                    <span class="close-card">&times;</span>
+                    
+                    <!-- Swarn Photo Container -->
+                    <div class="postcard-left">
+                        <img src="images/swarn.jpg" alt="Swarn" class="postcard-photo">
+                    </div>
+
+                    <!-- Postcard Content -->
+                    <div class="postcard-right">
+                        <h3 class="postcard-header">To you ❤️</h3>
+                        <p class="postcard-text">
+                            It doesn’t matter how the world sees you; what truly matters is the pure soul you are. Having someone with your emotional and psychological intelligence in my life is one of my biggest flexes. Meeting you and getting to know you was the best time. Even though circumstances changed and distance came between us—which honestly hurt—keeping this exact same bond till now means everything. You are someone I still want in my entire life. Happy Birthday! ✨
+                        </p>
+                        <div class="sticker-icon">🐧🎉</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
